@@ -88,6 +88,20 @@ export const loginStyles = StyleSheet.create({
     marginTop: 4,
     marginBottom: 8,
     textAlign: "center"
+  },
+  buttonContainer: {
+    width: "100%",
+    height: 60,
+    backgroundColor: "rgb(30, 30, 30)",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 8,
+    marginTop: 32
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold"
   }
 });
 
@@ -153,6 +167,66 @@ export const logoStyles = StyleSheet.create({
   lineImage: {
     flex: 1,
     height: 1
+  }
+});
+
+export const reviewStyles = StyleSheet.create({
+  itemContainer: {
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderBottomWidth: 1,
+    borderStyle: "solid",
+    borderBottomColor: "rgb(200, 200, 200)",
+  },
+  itemImage: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    marginRight: 16
+  },
+  contentContainer: {
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "center",
+  },
+  nameText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "rgb(40, 40, 40)",
+    marginBottom: 4
+  },
+  commentText: {
+    fontSize: 14,
+    fontWeight: "normal",
+    color: "rgb(85, 85, 85)"
+  },
+  ratingContainer: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: "rgb(255, 255, 255)",
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: 16
+  },
+  ratingText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "rgb(40, 40, 40)"
+  },
+  starIcon: {
+    width: 16,
+    height: 16,
+    marginRight: 4
+  },
+  dateText: {
+    fontSize: 12,
+    fontWeight: "normal",
+    color: "rgb(85, 85, 85)"
   }
 });
 
