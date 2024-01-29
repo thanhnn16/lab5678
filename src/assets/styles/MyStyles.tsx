@@ -29,11 +29,13 @@ export const welcomeStyles = StyleSheet.create({
   footer: {
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    flexDirection: "row",
+    marginTop: 32,
   },
   text: {
     color: "rgb(85, 85, 85)",
-    fontSize: 20,
+    fontSize: 22,
     lineHeight: 30,
     textAlign: "justify",
     marginHorizontal: 48,
@@ -84,32 +86,36 @@ export const loginStyles = StyleSheet.create({
     color: "#000",
     fontSize: 18,
     fontWeight: "normal",
-    marginHorizontal: 32,
     marginTop: 4,
     marginBottom: 8,
     textAlign: "center"
   },
   buttonContainer: {
-    width: "100%",
-    height: 60,
+    width: 296,
+    height: 56,
     backgroundColor: "rgb(30, 30, 30)",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 8,
-    marginTop: 32
+    marginTop: 16,
+    alignSelf: "center"
   },
   buttonText: {
     color: "#fff",
     fontSize: 20,
-    fontWeight: "bold"
-  }
+  },
+  secondaryText: {
+    color: "rgb(85, 85, 85)",
+    fontSize: 17,
+    fontWeight: "normal",
+    textAlign: "center"
+  },
 });
 
 export const inputStyles = StyleSheet.create({
   input: {
     width: "100%",
-    height: 32,
-    paddingHorizontal: 4,
+    paddingHorizontal: 2,
     borderBottomWidth: 1,
     borderStyle: "solid",
     borderBottomColor: "rgb(40, 40, 40)",
@@ -122,7 +128,6 @@ export const inputStyles = StyleSheet.create({
   },
   inputWithIcon: {
     width: "100%",
-    height: 32,
     paddingHorizontal: 4,
     borderBottomWidth: 1,
     borderStyle: "solid",

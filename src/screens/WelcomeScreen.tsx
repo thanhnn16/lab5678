@@ -11,7 +11,7 @@ const WelcomeScreen = ({navigation, route}) => {
         <Text style={welcomeStyles.subTitle}>MAKE YOUR</Text>
         <Text style={welcomeStyles.title}>HOME BEAUTIFUL</Text>
       </View>
-      <Text style={welcomeStyles.text}>The best simple place where you discover most wonderful furnitures
+      <Text style={welcomeStyles.text}>The best simple place where you discover most wonderful furniture's
         and make your home beautiful</Text>
       <Pressable style={welcomeStyles.button} onPress={() => navigation.navigate('Login')}>
         <Text style={welcomeStyles.buttonText}>Get Started</Text>

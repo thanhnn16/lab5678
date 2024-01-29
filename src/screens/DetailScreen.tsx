@@ -6,7 +6,7 @@ const DetailScreen = ({ navigation, route }) => {
   return (<SafeAreaView style={welcomeStyles.container}>
     <Text style={welcomeStyles.title}>No item found</Text>
     <Button title="Go back" onPress={() => navigation.goBack()} />
-  </SafeAreaView>);r
+  </SafeAreaView>);
 };
 
 export default DetailScreen;

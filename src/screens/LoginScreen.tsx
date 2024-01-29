@@ -5,7 +5,7 @@ import { NormalInput, PasswordInput } from "../components/InputField.tsx";
 import React, { useEffect, useState } from "react";
 
 // @ts-ignore
-const LoginScreen = ({ navigation }) => {
+const LoginScreen = ({ navigation, route }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -14,27 +14,31 @@ const LoginScreen = ({ navigation }) => {
   const [passwordError, setPasswordError] = useState(" ");
 
   const handleLogin = () => {
+    const registeredUser = route.params?.user;
+    console.log(registeredUser);
     if (email !== "" && password !== "") {
       navigation.navigate("Details");
     }
   };
 
   useEffect(() => {
-    if (email === "") {
-      setEmailError("Email is required");
-    } else if (!email.includes("@")) {
-      setEmailError("Invalid email");
-    } else {
-      setEmailError(" ");
+    console.log("initial render");
+    return () => {
+      if (email === "") {
+        setEmailError("Email is required");
+      } else if (!email.includes("@")) {
+        setEmailError("Invalid email");
+      } else {
+        setEmailError(" ");
+      }
+      if (password === "") {
+        setPasswordError("Password is required");
+      } else if (password.length < 6) {
+        setPasswordError("Password must be at least 6 characters");
+      } else {
+        setPasswordError(" ");
+      }
     }
-    if (password === "") {
-      setPasswordError("Password is required");
-    } else if (password.length < 6) {
-      setPasswordError("Password must be at least 6 characters");
-    } else {
-      setPasswordError(" ");
-    }
-    console.log(emailError, passwordError);
   }, [email, password]);
 
   return (
