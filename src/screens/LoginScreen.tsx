@@ -9,37 +9,28 @@ const LoginScreen = ({ navigation, route }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-
   const [emailError, setEmailError] = useState(" ");
   const [passwordError, setPasswordError] = useState(" ");
 
   const handleLogin = () => {
-    const registeredUser = route.params?.user;
-    console.log(registeredUser);
-    if (email !== "" && password !== "") {
-      navigation.navigate("Details");
+    if (email === "" || password === "") {
+      setPasswordError("Please fill in all fields");
+      return;
+    }
+    const user = route.params?.user ?? null;
+    if (user === null) {
+      setPasswordError("Wrong email or password")
+    } else {
+      if (user.email === email && user.password === password) {
+        navigation.reset({
+          index: 0,
+          routes: [{ name: "Details" }],
+        });
+      } else {
+        setPasswordError("Wrong email or password")
+      }
     }
   };
-
-  useEffect(() => {
-    console.log("initial render");
-    return () => {
-      if (email === "") {
-        setEmailError("Email is required");
-      } else if (!email.includes("@")) {
-        setEmailError("Invalid email");
-      } else {
-        setEmailError(" ");
-      }
-      if (password === "") {
-        setPasswordError("Password is required");
-      } else if (password.length < 6) {
-        setPasswordError("Password must be at least 6 characters");
-      } else {
-        setPasswordError(" ");
-      }
-    }
-  }, [email, password]);
 
   return (
     <SafeAreaView style={loginStyles.container}>
@@ -49,14 +40,31 @@ const LoginScreen = ({ navigation, route }) => {
       <View style={[{ marginHorizontal: 32 }, { marginTop: 64 }]}>
         <NormalInput placeholder="Email"
           value={email}
-          onChangeText={setEmail}
-          keyboardType="email-address"
+          onChangeText={(text) => {
+            if (text === "") {
+              setEmailError("Email is required");
+            } else if (!text.includes("@")) {
+              setEmailError("Invalid email");
+            } else {
+              setEmailError(" ");
+            }
+            setEmail(text);
+          }}
         />
         <Text style={inputStyles.errorText}>{emailError}</Text>
         <View style={[{ marginTop: 32 }]} />
         <PasswordInput placeholder="Password"
           value={password}
-          onChangeText={setPassword}
+          onChangeText={(text) => {
+            if (text === "") {
+              setPasswordError("Password is required");
+            } else if (text.length < 6) {
+              setPasswordError("Password must be at least 6 characters");
+            } else {
+              setPasswordError(" ");
+            }
+            setPassword(text);
+          }}
           secureTextEntry={!isPasswordVisible}
           onPress={() => setIsPasswordVisible(!isPasswordVisible)}
         />

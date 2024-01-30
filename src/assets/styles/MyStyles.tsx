@@ -116,6 +116,7 @@ export const inputStyles = StyleSheet.create({
   input: {
     width: "100%",
     paddingHorizontal: 2,
+    paddingBottom: 4,
     borderBottomWidth: 1,
     borderStyle: "solid",
     borderBottomColor: "rgb(40, 40, 40)",
@@ -128,7 +129,8 @@ export const inputStyles = StyleSheet.create({
   },
   inputWithIcon: {
     width: "100%",
-    paddingHorizontal: 4,
+    paddingHorizontal: 2,
+    paddingBottom: 4,
     borderBottomWidth: 1,
     borderStyle: "solid",
     borderBottomColor: "rgb(40, 40, 40)",

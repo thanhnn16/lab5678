@@ -10,7 +10,6 @@ export const NormalInput = (props) => {
             secureTextEntry={props.secureTextEntry}
             onChangeText={props.onChangeText}
             value={props.value}
-            keyboardType={props.keyboardType}
         />
     );
 }

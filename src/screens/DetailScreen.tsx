@@ -5,7 +5,10 @@ const DetailScreen = ({ navigation, route }) => {
   // const { item } = route.params;
   return (<SafeAreaView style={welcomeStyles.container}>
     <Text style={welcomeStyles.title}>No item found</Text>
-    <Button title="Go back" onPress={() => navigation.goBack()} />
+    <Button title="Logout" onPress={() => navigation.reset({
+      index: 0,
+      routes: [{ name: "Login" }],
+    })} />
   </SafeAreaView>);
 };
 

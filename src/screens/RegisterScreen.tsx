@@ -115,6 +115,7 @@ const RegisterScreen = ({ navigation }) => {
           password
         };
         console.log(user);
+        navigation.navigate("Login", { user })
       }} style={loginStyles.buttonContainer}>
         <Text style={loginStyles.buttonText}>SIGN UP</Text>
       </Pressable>
