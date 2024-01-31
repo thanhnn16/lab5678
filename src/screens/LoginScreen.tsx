@@ -14,23 +14,28 @@ const LoginScreen = ({ navigation, route }) => {
     const [emailError, setEmailError] = useState(" ");
     const [passwordError, setPasswordError] = useState(" ");
 
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+      const getUser = async () => {
+        const value = await AsyncStorage.getItem("user");
+        if (value !== null) {
+          setUser(JSON.parse(value));
+        }
+      };
+      getUser().then(r => console.log("user", user));
+    }, []);
+
     // const { user } = useContext(UserContext);
+
     type User = {
       name: string,
       email: string,
       password: string
     }
-    let user: User | null = null;
-    AsyncStorage.getItem("user").then((value) => {
-      if (value === null) {
-        console.log("No user");
-        return;
-      }
-      user = JSON.parse(value);
-      console.log(user);
-    });
 
     const handleLogin = () => {
+      console.log(user);
       if (email === "" || password === "") {
         setPasswordError("Please fill in all fields");
         return;
@@ -39,8 +44,7 @@ const LoginScreen = ({ navigation, route }) => {
         setPasswordError("Wrong email or password");
       } else {
         if (user.email === email && user.password === password) {
-          Alert.alert("Login success", `
-            Welcome ${user.name}`);
+          Alert.alert("Login success", `Welcome ${user.name}`);
           navigation.reset({
             index: 0,
             routes: [{ name: "Details" }]
