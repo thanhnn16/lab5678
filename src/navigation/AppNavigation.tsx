@@ -28,7 +28,6 @@ const AppNavigation = () => {
         headerShown: false,
       }} />
       <Stack.Screen name="Reviews" component={ReviewScreen} options={{
-        headerTransparent: true,
         headerTitle: 'Reviews',
         headerTitleStyle: {
           color: '#fff',

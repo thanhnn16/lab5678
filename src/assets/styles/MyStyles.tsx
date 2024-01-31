@@ -178,10 +178,14 @@ export const logoStyles = StyleSheet.create({
 });
 
 export const reviewStyles = StyleSheet.create({
+  container: {
+    width: "100%",
+    flex: 1,
+  },
   itemContainer: {
     width: "100%",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
     flexDirection: "row",
     paddingHorizontal: 16,
     paddingVertical: 8,
@@ -196,7 +200,7 @@ export const reviewStyles = StyleSheet.create({
     marginRight: 16
   },
   contentContainer: {
-    flex: 1,
+    flex: 4,
     alignItems: "flex-start",
     justifyContent: "center",
   },
@@ -212,13 +216,11 @@ export const reviewStyles = StyleSheet.create({
     color: "rgb(85, 85, 85)"
   },
   ratingContainer: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
+    flex: 1,
     backgroundColor: "rgb(255, 255, 255)",
     alignItems: "center",
     justifyContent: "center",
-    marginRight: 16
+    marginRight: 16,
   },
   ratingText: {
     fontSize: 16,
@@ -234,7 +236,12 @@ export const reviewStyles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "normal",
     color: "rgb(85, 85, 85)"
-  }
+  },
+  smallProductImage: {
+    width: 60,
+    height: 60,
+    objectFit: "contain",
+  },
 });
 
 export const detail = StyleSheet.create({
@@ -288,11 +295,15 @@ export const detail = StyleSheet.create({
     textAlign: "justify",
   },
   footer: {
+    position: "absolute",
+    width: "100%",
+    flex: 1,
+    bottom: 20,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
     flexDirection: "row",
-    marginTop: 32,
+    paddingHorizontal: 32,
   },
   bookmarkProductImage: {
     width: 32,
@@ -300,13 +311,12 @@ export const detail = StyleSheet.create({
     marginRight: 16
   },
   addToCartBtnContainer: {
-    width: "60%",
+    width: 200,
     height: 60,
     backgroundColor: "rgb(30, 30, 30)",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 8,
-    marginTop: 72
   },
   addToCartBtnText: {
     color: "#fff",

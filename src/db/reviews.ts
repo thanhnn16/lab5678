@@ -32,7 +32,7 @@ const reviews = [
     {
         name: "Michael Brown",
         comment: "The product exceeded my expectations.",
-        star: 54,
+        star: 4,
         date: "2022-03-10",
     },
     {
@@ -195,6 +195,12 @@ const reviews = [
         name: "Karen Smith",
         comment: "Not satisfied with the product.",
         star: 1,
+        date: "2022-12-10",
+    },
+    {
+        name: "Karen Smith2",
+        comment: "Not satisfied with the product.",
+        star: 5,
         date: "2022-12-10",
     },
 ];
