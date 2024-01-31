@@ -8,10 +8,12 @@ import {
   Keyboard
 } from "react-native";
 import { inputStyles, loginStyles, welcomeStyles } from "../assets/styles/MyStyles";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TopLogo from "../components/TopLogo";
 import { NormalInput, PasswordInput } from "../components/InputField";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+// import { UserContext } from "../utils/UserProvider.tsx";
 
 // @ts-ignore
 const RegisterScreen = ({ navigation }) => {
@@ -26,6 +28,8 @@ const RegisterScreen = ({ navigation }) => {
   const [emailError, setEmailError] = useState(" ");
   const [passwordError, setPasswordError] = useState(" ");
   const [rePasswordError, setRePasswordError] = useState(" ");
+
+  // const { setUser } = useContext(UserContext);
 
   return (
     <SafeAreaView style={loginStyles.container}>
@@ -111,11 +115,15 @@ const RegisterScreen = ({ navigation }) => {
           return;
         }
         const user = {
+          name,
           email,
           password
         };
         console.log(user);
-        navigation.navigate("Login", { user })
+        // setUser(user);
+        // JSON.stringify(user);
+        AsyncStorage.setItem("user", JSON.stringify(user)).then(r => console.log(r));
+        navigation.navigate("Login")
       }} style={loginStyles.buttonContainer}>
         <Text style={loginStyles.buttonText}>SIGN UP</Text>
       </Pressable>
@@ -123,7 +131,6 @@ const RegisterScreen = ({ navigation }) => {
       <View style={welcomeStyles.footer}>
         <Text style={loginStyles.secondaryText}>Already have an account?</Text>
         <Text style={loginStyles.forgotPasswordText} onPress={() => {
-
           navigation.navigate("Login");
         }}> SIGN IN</Text>
       </View>

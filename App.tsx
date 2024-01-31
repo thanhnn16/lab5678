@@ -1,6 +1,6 @@
-import { NavigationContainer } from '@react-navigation/native';
-import React from 'react';
-import type {PropsWithChildren} from 'react';
+import { NavigationContainer } from "@react-navigation/native";
+import React from "react";
+import type { PropsWithChildren } from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -8,17 +8,21 @@ import {
   StyleSheet,
   Text,
   useColorScheme,
-  View,
-} from 'react-native';
+  View
+} from "react-native";
 import AppNavigation from "./src/navigation/AppNavigation.tsx";
+import { UserProvider } from "./src/utils/UserProvider.tsx";
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
+
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
-      <AppNavigation />
+      <UserProvider>
+        <AppNavigation />
+      </UserProvider>
     </NavigationContainer>
   );
 }

@@ -237,3 +237,88 @@ export const reviewStyles = StyleSheet.create({
   }
 });
 
+export const detail = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    width: "100%",
+  },
+  productImage: {
+    width: '95%',
+    height: 450,
+    marginBottom: 16,
+    objectFit: "fill",
+    marginStart: 32,
+  },
+  productTitle: {
+    fontSize: 24,
+    fontWeight: "400",
+    color: "rgb(40, 40, 40)",
+    marginBottom: 8,
+    marginHorizontal: 32,
+  },
+  productPrice: {
+    fontSize: 28,
+    fontWeight: "normal",
+    color: "rgb(85, 85, 85)",
+    marginBottom: 16
+  },
+  priceContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginHorizontal: 32,
+    marginTop: 16,
+  },
+  adjustQtyBtn :{
+    width: 32,
+    height: 32,
+    borderRadius: 6,
+    backgroundColor: "lightgray",
+    alignItems: "center",
+    justifyContent: "center",
+    marginHorizontal: 8,
+  },
+  productDescription: {
+    fontSize: 16,
+    fontWeight: "normal",
+    color: "rgb(85, 85, 85)",
+    marginBottom: 16,
+    marginHorizontal: 16,
+    textAlign: "justify",
+  },
+  footer: {
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    marginTop: 32,
+  },
+  bookmarkProductImage: {
+    width: 32,
+    height: 32,
+    marginRight: 16
+  },
+  addToCartBtnContainer: {
+    width: "60%",
+    height: 60,
+    backgroundColor: "rgb(30, 30, 30)",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 8,
+    marginTop: 72
+  },
+  addToCartBtnText: {
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold"
+  },
+  reviewsContainer: {
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    flexDirection: "row",
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+  },
+});
